@@ -1,9 +1,8 @@
 @extends('layout.index')
 
 @section('title')
-    {{__('Home')}}
+    {{__('Coming soon')}}
 @endsection
 
 @section('content')
-    <div>Home</div>
 @endsection

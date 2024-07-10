@@ -1,8 +1,7 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100" style="width: 280px;">
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100" style="width:100%;">
     <div class="d-flex align-items-center">
-        <a href="{{route('layout.home')}}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <span class="fs-5">Sidebar</span>
-
+        <a href="{{ route('dashboard') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="{{asset(\Illuminate\Support\Facades\Storage::url('uploads/logo/logo.png'))}}" width="180px">
         </a>
         <i class="fa-solid fa-bars fs-5 " style="cursor:pointer"></i>
 
@@ -10,10 +9,10 @@
 
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+        <li class="nav-item ">
+            <a href="{{ route('dashboard') }}" class="nav-link text-dark @if(request()->route()->getName() == 'dashboard') text-white text-bg-dark @endif" aria-current="page">
                 <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                Home
+                Dashboard
             </a>
         </li>
         <li>
@@ -23,10 +22,20 @@
                 </button>
                 <div class="collapse show" id="users-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+                        <li>
+                            <a href="{{ route('users.index') }}" class="link-body-emphasis d-inline-flex rounded text-decoration-none
+            @if(request()->route()->getName() == 'users.index') text-white text-bg-dark @endif">
+                                View
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('users.create') }}" class="link-body-emphasis d-inline-flex rounded text-decoration-none
+            @if(request()->route()->getName() == 'users.create') text-white text-bg-dark  @endif">
+                                Create
+                            </a>
+                        </li>
                     </ul>
+
                 </div>
             </div>
         </li>
@@ -37,9 +46,20 @@
                 </button>
                 <div class="collapse show" id="tasks-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="{{route('tasks.index')}}" class="link-body-emphasis d-inline-flex text-decoration-none rounded">view</a></li>
-                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Create</a></li>
+                        <li>
+                            <a href="{{ route('tasks.index') }}" class="link-body-emphasis d-inline-flex rounded text-decoration-none
+            @if(request()->route()->getName() == 'tasks.index') text-white text-bg-dark @endif">
+                                View
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('tasks.create') }}" class="link-body-emphasis d-inline-flex rounded text-decoration-none
+            @if(request()->route()->getName() == 'tasks.create') text-white text-bg-dark  @endif">
+                                Create
+                            </a>
+                        </li>
                     </ul>
+
                 </div>
             </div>
         </li>
@@ -48,13 +68,11 @@
     <hr>
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>mdo</strong>
+            <img src="{{asset(\Illuminate\Support\Facades\Storage::url('uploads/avatar/avatar.png'))}}" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>Super Admin</strong>
         </a>
         <ul class="dropdown-menu text-small shadow">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="{{route('soon')}}">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Sign out</a></li>
         </ul>
@@ -97,6 +115,8 @@
         <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
         </a>
+
+
         <ul class="dropdown-menu text-small shadow">
             <li><a class="dropdown-item" href="#">New project...</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
