@@ -1,0 +1,18 @@
+body , html{
+    height: 100vh;
+}
+
+.container-grid{
+    display: grid;
+    grid-template-columns: 250px 1fr ;
+    height: 100% !important;
+    overflow: hidden;
+}
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date{
+    text-align: left !important ;
+}
+@media (max-width: 768px) {
+    .container-grid {
+        grid-template-columns: 1fr; /* Adjust columns for mobile view */
+    }
+}
