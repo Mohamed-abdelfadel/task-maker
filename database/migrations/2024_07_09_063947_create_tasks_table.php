@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->boolean('completed');
+            $table->string('description')->nullable();
+            $table->dateTime('completed_at')->nullable();
             $table->dateTime('start_date');
             $table->dateTime('due_date');
             $table->timestamps();
