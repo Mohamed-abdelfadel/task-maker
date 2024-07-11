@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,47 +14,12 @@ class UserController extends Controller
     public function index()
     {
         $users = User::query()->orderBy('id', 'desc')->paginate(10);
-        return view('users.index' , compact('users'));
+        return view('users.index', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('users.create');
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Task $task)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Task $task)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Task $task)
-    {
-        //
+        return view('layout.soon');
     }
 
     /**
@@ -64,8 +30,7 @@ class UserController extends Controller
         try {
             User::destroy($request->id);
 
-        }
-        catch (\Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with('error', __($e->getMessage()));
         }
         return redirect()->route('users.index')->with('success', __('User Deleted Successfully.'));

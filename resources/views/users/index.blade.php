@@ -29,13 +29,15 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role->name }}</td>
-                            <td class="text-center"><img src="{{ asset('storage/uploads/avatar/' . $user->avatar) }}" width="40px" alt="Avatar"></td>
+                            <td><img src="{{ asset('../storage/uploads/avatar/' . $user->avatar) }}" width="40px"
+                                     alt="Avatar"></td>
                             <td>{{ $user->created_at->format('Y-m-d') }}</td>
                             <td>
                                 <form method="POST" action="{{ route('user.destroy', $user->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="{{ __('Delete') }}">
+                                    <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="tooltip"
+                                            title="{{ __('Delete') }}">
                                         <i class="fa-regular fa-trash-can"></i>
                                     </button>
                                 </form>
@@ -44,7 +46,6 @@
                     @endforeach
                     </tbody>
                 </table>
-
                 <div class="d-flex justify-content-center mt-3">
                     {{ $users->links() }}
                 </div>
