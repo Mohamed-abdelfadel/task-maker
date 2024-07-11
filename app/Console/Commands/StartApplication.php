@@ -27,8 +27,11 @@ class StartApplication extends Command
      */
     public function handle()
     {
+        $this->info('Generating your secret key...');
+        $this->call('key:generate');
+
         $this->info('Migrating the database...');
-        $this->call('migrate');
+        $this->call('migrate:fresh');
 
         $this->info('Seeding the database (That may take time)...');
         $this->call('db:seed');

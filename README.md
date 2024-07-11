@@ -35,4 +35,4 @@ Users can:
 - Finally run the start application command ``php artisan serve``.
 
 Or simply 
-- Run ``php artisan app:start``.
+- Run ``php artisan app:start`` instead of last 3 steps.
