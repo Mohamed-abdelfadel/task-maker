@@ -1,7 +1,7 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100" style="width:100%;">
     <div class="d-flex align-items-center">
         <a href="{{ route('dashboard') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img src="{{asset(\Illuminate\Support\Facades\Storage::url('uploads/logo/logo.png'))}}" width="180px">
+            <img src="{{asset('../storage/uploads/logo/logo.png')}}" width="180px">
         </a>
         <i class="fa-solid fa-bars fs-5 " style="cursor:pointer"></i>
 
@@ -68,7 +68,7 @@
     <hr>
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{{asset(\Illuminate\Support\Facades\Storage::url('uploads/avatar/avatar.png'))}}" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img src="{{asset('../storage/uploads/avatar/avatar.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>Super Admin</strong>
         </a>
         <ul class="dropdown-menu text-small shadow">
