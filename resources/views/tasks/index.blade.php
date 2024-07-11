@@ -38,16 +38,20 @@
                                 @endif
                             </td>
                             <td>
-                                <span class="{{ (strtotime($task->due_date) < time()) ? 'text-danger' : '' }}">{{ date("Y-m-d", strtotime($task->due_date)) }}</span>
+                                <span
+                                    class="{{ (strtotime($task->due_date) < time()) ? 'text-danger' : '' }}">{{ date("Y-m-d", strtotime($task->due_date)) }}</span>
                             </td>
                             <td>{{ $task->assignedTo ? $task->assignedTo->name : __('[Unassigned]') }}</td>
                             <td>{{ $task->createdBy ? $task->createdBy->name : __('[Unassigned]') }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <form id="delete-form-{{ $task->id }}" method="POST" action="{{ route('task.destroy', $task->id) }}" class="me-2">
+                                    <form id="delete-form-{{ $task->id }}" method="POST"
+                                          action="{{ route('task.destroy', $task->id) }}" class="me-2">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm align-items-center bs-pass-para" data-bs-toggle="tooltip" title="{{ __('Delete') }}">
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm align-items-center bs-pass-para"
+                                                data-bs-toggle="tooltip" title="{{ __('Delete') }}">
                                             <i class="fa-regular fa-trash-can"></i>
                                         </button>
                                     </form>
@@ -55,7 +59,9 @@
                                     <form method="get" action="{{ route('task.done', $task->id) }}" class="me-2">
                                         @csrf
                                         @method('put')
-                                        <button type="submit" class="btn btn-success btn-sm align-items-center bs-pass-para" data-bs-toggle="tooltip" title="{{ __('Done') }}">
+                                        <button type="submit"
+                                                class="btn btn-success btn-sm align-items-center bs-pass-para"
+                                                data-bs-toggle="tooltip" title="{{ __('Done') }}">
                                             <i class="fa-solid fa-check"></i>
                                         </button>
                                     </form>

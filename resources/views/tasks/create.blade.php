@@ -1,4 +1,3 @@
-
 @extends('layout.index')
 
 @section('title')
@@ -74,7 +73,6 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 @endsection
