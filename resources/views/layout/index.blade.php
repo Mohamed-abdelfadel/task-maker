@@ -41,9 +41,19 @@
 </div>
 <script src="{{asset('assets/js/bootstrap.bundle.js') }}"></script>
 <script>
-    $(document).ready(function () {
-        $('.alert').delay(3000).fadeOut('slow');
+    document.addEventListener('DOMContentLoaded', function () {
+        const alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function (alert) {
+            setTimeout(function () {
+                alert.style.transition = 'opacity 0.5s ease-out';
+                alert.style.opacity = '0';
+                setTimeout(function () {
+                    alert.style.display = 'none';
+                }, 500);
+            }, 3000);
+        });
     });
+
 </script>
 </body>
 </html>
