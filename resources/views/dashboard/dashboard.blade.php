@@ -8,50 +8,50 @@
     <div class="row">
         <div class="col-3">
             <a href="{{route('users.index')}}" class="text-decoration-none">
-            <div class="card bg-primary-subtle">
-                <div class="card-body">
-                    <div class="fs-1"><i class="fa-solid fa-users"></i></div>
-                    <p class="text-muted text-sm mt-4 mb-2">Total</p>
-                    <h6 class="mb-3">Users</h6>
-                    <h3 class="mb-0">{{$totalUsers}}</h3>
+                <div class="card bg-primary-subtle">
+                    <div class="card-body">
+                        <div class="fs-1"><i class="fa-solid fa-users"></i></div>
+                        <p class="text-muted text-sm mt-4 mb-2">Total</p>
+                        <h6 class="mb-3">Users</h6>
+                        <h3 class="mb-0">{{$totalUsers}}</h3>
+                    </div>
                 </div>
-            </div>
             </a>
         </div>
         <div class="col-3">
             <a href="{{route('users.index')}}" class="text-decoration-none">
-            <div class="card bg-danger-subtle">
-                <div class="card-body">
-                    <div class="fs-1"><i class="fa-solid fa-user-large"></i></div>
-                    <p class="text-muted text-sm mt-4 mb-2">Total</p>
-                    <h6 class="mb-3">Employees</h6>
-                    <h3 class="mb-0">{{$totalEmployees}}</h3>
+                <div class="card bg-danger-subtle">
+                    <div class="card-body">
+                        <div class="fs-1"><i class="fa-solid fa-user-large"></i></div>
+                        <p class="text-muted text-sm mt-4 mb-2">Total</p>
+                        <h6 class="mb-3">Employees</h6>
+                        <h3 class="mb-0">{{$totalEmployees}}</h3>
+                    </div>
                 </div>
-            </div>
             </a>
         </div>
         <div class="col-3">
             <a href="{{route('users.index')}}" class="text-decoration-none">
-            <div class="card bg-warning-subtle">
-                <div class="card-body ">
-                    <div class="fs-1"><i class="fa-solid fa-user-tie"></i></div>
-                    <p class="text-muted text-sm mt-4 mb-2">Total</p>
-                    <h6 class="mb-3">Admins</h6>
-                    <h3 class="mb-0">{{$totalAdmins}}</h3>
+                <div class="card bg-warning-subtle">
+                    <div class="card-body ">
+                        <div class="fs-1"><i class="fa-solid fa-user-tie"></i></div>
+                        <p class="text-muted text-sm mt-4 mb-2">Total</p>
+                        <h6 class="mb-3">Admins</h6>
+                        <h3 class="mb-0">{{$totalAdmins}}</h3>
+                    </div>
                 </div>
-            </div>
             </a>
         </div>
         <div class="col-3">
             <a href="{{route('tasks.index')}}" class="text-decoration-none">
-            <div class="card bg-success-subtle">
-                <div class="card-body ">
-                    <div class="fs-1"><i class="fa-solid fa-list-check"></i></div>
-                    <p class="text-muted text-sm mt-4 mb-2">Total</p>
-                    <h6 class="mb-3">Tasks</h6>
-                    <h3 class="mb-0">{{$totalTasks}}</h3>
+                <div class="card bg-success-subtle">
+                    <div class="card-body ">
+                        <div class="fs-1"><i class="fa-solid fa-list-check"></i></div>
+                        <p class="text-muted text-sm mt-4 mb-2">Total</p>
+                        <h6 class="mb-3">Tasks</h6>
+                        <h3 class="mb-0">{{$totalTasks}}</h3>
+                    </div>
                 </div>
-            </div>
             </a>
         </div>
     </div>

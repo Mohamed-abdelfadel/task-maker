@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
@@ -13,7 +12,7 @@ class TaskController extends Controller
 
     public function index()
     {
-        $tasks = Task::query()->orderBy('id','desc')->paginate(10);
+        $tasks = Task::query()->orderBy('id', 'desc')->paginate(10);
         return view('tasks.index', compact('tasks'));
     }
 
@@ -24,7 +23,7 @@ class TaskController extends Controller
         $admins = $allUsers->get(1, collect());
         $users = $allUsers->get(2, collect());
 
-        return view('tasks.create',compact('admins','users'));
+        return view('tasks.create', compact('admins', 'users'));
     }
 
     public function store(Request $request)
@@ -43,24 +42,24 @@ class TaskController extends Controller
             'start_date.date_format' => 'The start date must be in the format YYYY-MM-DD.',
             'due_date.date_format' => 'The due date must be in the format YYYY-MM-DD.',
         ];
-        $validator = Validator::make($request->all(), $rules , $messages);
+        $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
             $messages = $validator->getMessageBag();
             return redirect()->route('tasks.index')->with('error', $messages->first());
-        }
-        else{
+        } else {
             $task = new Task();
-            $task->title  = $request->title;
-            $task->description  = $request->description;
-            $task->start_date  = $request->start_date;
-            $task->due_date  = $request->due_date;
-            $task->created_by  = $request->created_by;
-            $task->assigned_to  = $request->assigned_to;
+            $task->title = $request->title;
+            $task->description = $request->description;
+            $task->start_date = $request->start_date;
+            $task->due_date = $request->due_date;
+            $task->created_by = $request->created_by;
+            $task->assigned_to = $request->assigned_to;
             $task->save();
             return redirect()->route('tasks.index')->with('success', __('Task created Successfully.'));
         }
     }
+
     public function destroy(Request $request)
     {
         Task::destroy($request->id);
@@ -70,15 +69,14 @@ class TaskController extends Controller
     public function done(Request $request)
     {
         $task = Task::query()->find($request->id);
-        if ($task->completed_at){
+        if ($task->completed_at) {
             return redirect()->back()->with('error', __('Task is Already Done.'));
-        }
-        else{
+        } else {
             $task->completed_at = now();
             $task->save();
         }
 
-        return redirect()->route('tasks.index')->with('success', __('Task Done Successfully.'));
+        return redirect()->back()->with('success', __('Task Done Successfully.'));
     }
 
 }

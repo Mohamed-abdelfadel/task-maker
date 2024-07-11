@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 class authController extends Controller
 {
     public function login()
     {
-        return 'login';
+        return view('layout.soon');
     }
+
     public function register()
     {
-        return 'register';
+        return view('layout.soon');
     }
 
     public function comingSoon()

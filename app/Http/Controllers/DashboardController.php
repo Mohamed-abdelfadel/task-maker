@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -28,6 +27,6 @@ class DashboardController extends Controller
             ->with('assignedTo')
             ->limit(10)
             ->get();
-        return view('dashboard.dashboard' , compact('nearestDueTasks' , 'mostContributors' , 'totalUsers', 'totalEmployees' , 'totalAdmins' , 'totalTasks'));
+        return view('dashboard.dashboard', compact('nearestDueTasks', 'mostContributors', 'totalUsers', 'totalEmployees', 'totalAdmins', 'totalTasks'));
     }
 }
