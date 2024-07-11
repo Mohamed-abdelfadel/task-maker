@@ -27,6 +27,8 @@ Users can:
 </p>
 
 ## Setup steps
+- This project running on ``PHP version 8.2.1`` and ``Larave  version 11.9``.
+- Make sure to have an active MySQL connection or change the database credentials from ``.env`` file.
 - Make a new folder and run this git command: ``git clone https://github.com/Mohamed-abdelfadel/task-maker`` then enter it.
 - Change the .`env.example` file to `.env` file.
 - Run ``composer install`` command.
