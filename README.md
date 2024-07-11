@@ -1,12 +1,12 @@
 # Task-maker
----
+
 <p>
   <img src="dashboard.png?raw=true" alt="Dashboard" width="900"/>
 </p>
 
 ## Overview
 
----
+
 
 **Task Maker** is a comprehensive tool designed to track various metrics related to the company's employees, customers,
 tasks, and finances. The dashboard provides a high-level overview of the company's operations, encompassing workforce
@@ -28,7 +28,7 @@ Users can:
 
 ## Setup steps
 
----
+
 
 - Make a new folder and run this git command:``https://github.com/Mohamed-abdelfadel/task-maker`` then enter it.
 - Change the .`env.example` file to `.env` file.
