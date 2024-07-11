@@ -33,5 +33,6 @@ Users can:
 - Run the secret key generation command ``php artisan key:generate``.
 - Run the Database migration and seeders ``php artisan migrate:fresh --seed``.
 - Finally run the start application command ``php artisan serve``.
+
 Or simply 
 - Run ``php artisan app:start``.
