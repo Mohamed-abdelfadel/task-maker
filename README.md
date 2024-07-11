@@ -27,9 +27,6 @@ Users can:
 </p>
 
 ## Setup steps
-
-
-
 - Make a new folder and run this git command: ``git clone https://github.com/Mohamed-abdelfadel/task-maker`` then enter it.
 - Change the .`env.example` file to `.env` file.
 - Run ``composer install`` command.
@@ -37,3 +34,5 @@ Users can:
 - Run the Database migration and seeders ``php artisan migrate:fresh --seed``.
 - Finally run the start application command ``php artisan serve``.
 
+Or simply 
+- Run ``php artisan app:start``.
