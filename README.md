@@ -30,8 +30,10 @@ Users can:
 
 
 
-- Make a new folder and run this git command:``https://github.com/Mohamed-abdelfadel/task-maker`` then enter it.
+- Make a new folder and run this git command: ``git clone https://github.com/Mohamed-abdelfadel/task-maker`` then enter it.
 - Change the .`env.example` file to `.env` file.
+- Run ``composer install`` command.
 - Run the secret key generation command ``php artisan key:generate``.
 - Run the Database migration and seeders ``php artisan migrate:fresh --seed``.
+- Finally run the start application command ``php artisan serve``.
 
