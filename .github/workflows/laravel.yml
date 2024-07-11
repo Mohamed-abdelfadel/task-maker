@@ -14,7 +14,7 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
           MYSQL_DATABASE: task-maker
         ports:
           - 3306:3306
@@ -45,7 +45,20 @@ jobs:
         sed -i 's/DB_DATABASE=.*/DB_DATABASE=task-maker/' .env
         sed -i 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
         sed -i 's/DB_PASSWORD=.*/DB_PASSWORD=/' .env
+    - name: Wait for MySQL
+      run: |
+        until mysqladmin ping -h127.0.0.1 --silent; do
+          echo "Waiting for database connection..."
+          sleep 5
+        done
     - name: Run Migrations
+      env:
+        DB_CONNECTION: mysql
+        DB_HOST: 127.0.0.1
+        DB_PORT: 3306
+        DB_DATABASE: task-maker
+        DB_USERNAME: root
+        DB_PASSWORD: ''
       run: php artisan migrate --force
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
