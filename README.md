@@ -20,7 +20,7 @@ Users can:
 - Mark tasks as completed
 - Delete tasks
 
-## Class Diagram
+## Entity Relation Diagram 
 
 <p>
   <img src="ERP.png?raw=true" alt="Dashboard" width="900"/>
