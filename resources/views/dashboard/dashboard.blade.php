@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="{{route('users.index')}}" class="text-decoration-none">
                 <div class="card bg-primary-subtle">
                     <div class="card-body">
@@ -18,7 +18,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="{{route('users.index')}}" class="text-decoration-none">
                 <div class="card bg-danger-subtle">
                     <div class="card-body">
@@ -30,7 +30,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="{{route('users.index')}}" class="text-decoration-none">
                 <div class="card bg-warning-subtle">
                     <div class="card-body ">
@@ -42,7 +42,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="{{route('tasks.index')}}" class="text-decoration-none">
                 <div class="card bg-success-subtle">
                     <div class="card-body ">
@@ -88,24 +88,32 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <span class="{{ (strtotime($nearestDueTask->due_date) < time()) ? 'text-danger' : '' }}">{{ date("Y-m-d", strtotime($nearestDueTask->due_date)) }}</span>
+                                        <span
+                                            class="{{ (strtotime($nearestDueTask->due_date) < time()) ? 'text-danger' : '' }}">{{ date("Y-m-d", strtotime($nearestDueTask->due_date)) }}</span>
                                     </td>
                                     <td>{{ $nearestDueTask->assignedTo ? $nearestDueTask->assignedTo->name : '[Unassigned]' }}</td>
 
                                     <td>
                                         <div class="d-flex">
-                                            <form method="POST" action="{{ route('task.destroy', $nearestDueTask->id) }}" class="me-2">
+                                            <form method="POST"
+                                                  action="{{ route('task.destroy', $nearestDueTask->id) }}"
+                                                  class="me-2">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm align-items-center bs-pass-para" data-bs-toggle="tooltip" title="{{ __('Delete') }}">
+                                                <button type="submit"
+                                                        class="btn btn-danger btn-sm align-items-center bs-pass-para"
+                                                        data-bs-toggle="tooltip" title="{{ __('Delete') }}">
                                                     <i class="fa-regular fa-trash-can"></i>
                                                 </button>
                                             </form>
 
-                                            <form method="get" action="{{ route('task.done', $nearestDueTask->id) }}" class="me-2">
+                                            <form method="get" action="{{ route('task.done', $nearestDueTask->id) }}"
+                                                  class="me-2">
                                                 @csrf
                                                 @method('put')
-                                                <button type="submit" class="btn btn-success btn-sm align-items-center bs-pass-para" data-bs-toggle="tooltip" title="{{ __('Done') }}">
+                                                <button type="submit"
+                                                        class="btn btn-success btn-sm align-items-center bs-pass-para"
+                                                        data-bs-toggle="tooltip" title="{{ __('Done') }}">
                                                     <i class="fa-solid fa-check"></i>
                                                 </button>
 
@@ -150,7 +158,9 @@
                                             <form method="get" action="" class="me-2">
                                                 @csrf
                                                 @method('get')
-                                                <button type="submit" class="btn btn-success btn-sm align-items-center bs-pass-para" data-bs-toggle="tooltip" title="{{ __('Promote') }}">
+                                                <button type="submit"
+                                                        class="btn btn-success btn-sm align-items-center bs-pass-para"
+                                                        data-bs-toggle="tooltip" title="{{ __('Promote') }}">
                                                     <i class="fa-solid fa-star"></i>
                                                 </button>
                                             </form>
