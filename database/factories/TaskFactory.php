@@ -14,8 +14,8 @@ class TaskFactory extends Factory
     public function definition()
     {
         $faker = \Faker\Factory::create('en_US');
-        $userIds = User::where('role_id', 1)->pluck('id')->toArray();
-        $adminIds = User::where('role_id', 2)->pluck('id')->toArray();
+        $adminIds = User::where('role_id', 1)->pluck('id')->toArray();
+        $userIds = User::where('role_id', 2)->pluck('id')->toArray();
 
         return [
             'title' => $faker->sentence(3),
