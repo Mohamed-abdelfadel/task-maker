@@ -8,7 +8,7 @@
 
 
 
-**Task Maker** is a comprehensive tool designed to track various metrics related to the company's employees, customers,
+**Task Maker** is a comprehensive tool that tracks various metrics related to the company's employees, customers,
 tasks, and finances. The dashboard provides a high-level overview of the company's operations, encompassing workforce
 details, productivity metrics, and task management insights.
 
@@ -23,7 +23,7 @@ Users can:
 ## Entity Relation Diagram 
 
 <p>
-  <img src="ERP.png?raw=true" alt="Dashboard" width="900"/>
+  <img src="ERD.png?raw=true" alt="ERD" width="900"/>
 </p>
 
 ## Setup steps
@@ -37,4 +37,4 @@ Users can:
 - Finally run the start application command ``php artisan serve``.
 
 Or simply 
-- Run ``php artisan app:start`` instead of last 3 steps.
+- Run ``php artisan app:start`` instead of the last 3 steps.
